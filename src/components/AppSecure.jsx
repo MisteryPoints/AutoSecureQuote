@@ -1,6 +1,7 @@
 import Formulario from "./Formulario"
+import useQuote from "../hooks/useQuote"
 
-const AppSecure = () => {
+const AppSecure = () => { 
   return (
     <>
         <header className='my-10'>
