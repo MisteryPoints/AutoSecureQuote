@@ -5,7 +5,7 @@ import Error from './Error'
 
 const Formulario = () => { 
 
-  const {datos, handleChangeDatos, error, setError} = useQuote()  
+  const {datos, handleChangeDatos, error, setError, quoteSecure} = useQuote()  
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -15,9 +15,8 @@ const Formulario = () => {
         return
     }
 
-    setError('')
-
-    //TODO : COTIZADOR
+    setError('') 
+    quoteSecure()
   }
   
   return (
@@ -31,7 +30,7 @@ const Formulario = () => {
                 <select name="marca" className='w-full p-3 bg-white border border-gray-200 rounded-lg' onChange={e => handleChangeDatos(e)}>
                     <option value="">--- Selecciona Marca ---</option>
                     {MARCAS.map(marca => (
-                        <option key={marca.id} value={marca.nombre}>{marca.nombre}</option>
+                        <option key={marca.id} value={marca.id}>{marca.nombre}</option>
                     ))}
                 </select>
             </div>
