@@ -60,7 +60,7 @@ const Formulario = () => {
                     ))}
                 </div>
             </div>
-            <input type="submit" className='w-5/12 bg-indigo-500 hover:bg-indigo-700 hover:shadow-lg hover:shadow-gray-500   text-white cursor-pointer rounded-2xl p-2 font-bold uppercase transition-250' value='Cotizar'/>
+            <input type="submit" className='w-5/12 bg-purple-600 hover:bg-purple-800 hover:shadow-lg hover:shadow-gray-500   text-white cursor-pointer rounded-2xl p-2 font-bold uppercase transition-250' value='Cotizar'/>
         </form>
     </>
   )
