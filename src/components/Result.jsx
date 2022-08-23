@@ -6,9 +6,10 @@ const Result = () => {
     const {result, datos} = useQuote()
     const {marca, year, plan} = datos
     const [modal, setModal] = useState(true);
-    const [nameMarca] = useCallback(MARCAS.filter(m => m.id === Number(marca))
+    //useCallback puede ser usado en vez del useMemo solo que este viene con return implicito por lo que no necesita el arrow Function
+    const [nameMarca] = useMemo( () => MARCAS.filter(m => m.id === Number(marca))
     ,[result]) 
-    const [namePlan] = useCallback(PLANS.filter(p => p.id === Number(plan)) 
+    const [namePlan] = useMemo( () => PLANS.filter(p => p.id === Number(plan)) 
     ,[result]) 
     const yearRef = useRef(year)
     const handleX = () => { 
@@ -22,7 +23,7 @@ const Result = () => {
             <h2 className="text-gray-600 font-bold  text-3xl">
                 <u>Resumen</u>
             </h2>
-            <p className="absolute right-[2%] top-[-2%] font-bold text-xl cursor-pointer" onClick={handleX}>x</p>
+            <p className="absolute right-[1%] top-[-2%] font-bold text-xl cursor-pointer" onClick={handleX}>x</p>
             <p className="my-2">
                 <span className="font-bold">Marca:   </span>
                 {nameMarca.nombre}
